@@ -28,6 +28,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 ## INSTALL DOCKER NVIDIA CONTAINER RUNTIME
 DOCS: https://docs.docker.com/config/containers/resource_constraints/#gpu 
+<br>
 DOCS: https://nvidia.github.io/nvidia-container-runtime/
 
 ``` bash
