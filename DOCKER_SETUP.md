@@ -40,7 +40,7 @@ systemctl restart docker
 
 <hr>
 
-## ADD USERS TO docker GROUP 
+## ADD USER TO docker GROUP (The remaining users should be added)
 (user may need to log out and back in for change to take effect)
 ``` bash
 sudo usermod -aG docker bakerdp   
