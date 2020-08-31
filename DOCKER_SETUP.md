@@ -41,7 +41,7 @@ systemctl restart docker
 <hr>
 
 ## ADD USERS TO docker GROUP 
-(user may need to log out and back for change to take effect)
+(user may need to log out and back in for change to take effect)
 ``` bash
 sudo usermod -aG docker bakerdp   
 ```
@@ -70,7 +70,7 @@ docker run -it --rm --gpus all sg2:1.0 bash
 # To smoke test the setup (from inside the stylegan2 dir [the container work dir])
 nvcc test_nvcc.cu -o test_nvcc -run
 
-# When you're ready to exit the containers
+# When you're ready to exit the container
 exit
 ```
     
