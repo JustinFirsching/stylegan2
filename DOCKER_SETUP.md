@@ -1,4 +1,6 @@
-## INSTALL DOCKER
+Perform the below steps in order.
+
+## 1. INSTALL DOCKER
 
 DOCS: https://docs.docker.com/engine/install/ubuntu/ 
 
@@ -26,7 +28,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 <hr>
 
-## INSTALL DOCKER NVIDIA CONTAINER RUNTIME
+## 2. INSTALL DOCKER NVIDIA CONTAINER RUNTIME
 DOCS: https://docs.docker.com/config/containers/resource_constraints/#gpu 
 <br>
 DOCS: https://nvidia.github.io/nvidia-container-runtime/
@@ -40,7 +42,7 @@ systemctl restart docker
 
 <hr>
 
-## ADD USER TO docker GROUP (The remaining users should be added)
+## 3. ADD USER TO docker GROUP (The remaining users should be added)
 (user may need to log out and back in for change to take effect)
 ``` bash
 sudo usermod -aG docker bakerdp   
@@ -48,12 +50,12 @@ sudo usermod -aG docker bakerdp
 
 <hr>
 
-## CLONE THE CONTAINER IMAGE INPUTS
+## 4. CLONE THE CONTAINER IMAGE INPUTS
     git clone https://github.com/NVlabs/stylegan2.git . 
 
 <hr>
 
-## BUILD THE CONTAINER IMAGE 
+## 5. BUILD THE CONTAINER IMAGE 
 (This should pull several of the layers from local cache rather than downloading)
 ``` bash
 cd <DIR_CONTAINING_CLONED_REPO>
@@ -62,7 +64,7 @@ docker build --tag sg2:1.0 .
 
 <hr>
 
-## RUN THE CONTAINER INTERACTIVELY 
+## 6. RUN THE CONTAINER INTERACTIVELY 
 DOCS: https://docs.docker.com/engine/reference/commandline/run/
 ``` bash
 docker run -it --rm --gpus all sg2:1.0 bash
