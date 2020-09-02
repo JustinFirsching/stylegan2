@@ -54,7 +54,7 @@ ssh -p 2222 <USER_NAME>@<REMOTE_HOST>
 ### 6. YOUR WORKFLOW COULD BE:
 0. Edit code (which is located on <REMOTE_HOST>)
 0. Save code
-0. ```ALT+TAB``` to a terminal-based SSH session on <REMOTE_HOST>
+0. ```ALT+TAB```(Or ```CTRL+ ` ``` to switch from VSCode's editor to terminal) to a terminal-based SSH session on <REMOTE_HOST> 
 0. Press ```UP-ARROW, ENTER``` to re-run some code 
     - ```python3 <ABS_OR_REL_PATH>/do_stuff.py```
     
