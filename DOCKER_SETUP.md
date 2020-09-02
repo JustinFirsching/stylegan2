@@ -75,11 +75,16 @@ DOCS: https://docs.docker.com/engine/reference/commandline/run/
 <br>
 (Omit the '--gpus all' if you don't have a GPU)
 ``` bash
-# Run the container with a volume mounted with a two-way bind, and a mounted volume containing a readonly dataset. 
+# Run the container with a volume mounted with a two-way bind, 
+#and a mounted volume containing a readonly dataset. 
 docker run -it --rm --gpus all -v $(pwd):/src -v /{path}/{to}/{data}:/data:ro sg2:1.0 bash
 
 # To smoke test the setup (from inside the stylegan2 dir [the container work dir])
 nvcc test_nvcc.cu -o test_nvcc -run
+
+# Assuming the smoke test looks good, you can now edit Python source code on 
+# the host machine, and those changes will be reflected in the container 
+# (where you have an interactive session capable of running said code).
 
 # When you're ready to exit the container
 exit
