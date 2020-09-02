@@ -11,5 +11,5 @@ RUN pip install requests==2.22.0
 RUN pip install Pillow==6.2.1
 
 # Custom to fork
-ADD . /stylegan2/
-WORKDIR /stylegan2
+# ADD . /stylegan2/
+# WORKDIR /stylegan2

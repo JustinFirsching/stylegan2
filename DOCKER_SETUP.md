@@ -64,10 +64,19 @@ docker build --tag sg2:1.0 .
 
 <hr>
 
+<!-- ## 6. CREATE A VOLUME IN YOUR 
+(Assumes you have a work dir of <DIR_CONTAINING_CLONED_REPO>)
+``` bash
+docker volume create name <YOUR_USERNAME>
+``` -->
+
 ## 6. RUN THE CONTAINER INTERACTIVELY 
 DOCS: https://docs.docker.com/engine/reference/commandline/run/
+<br>
+(Omit the '--gpus all' if you don't have a GPU)
 ``` bash
-docker run -it --rm --gpus all sg2:1.0 bash
+# Run the container with a volume mounted with a two-way bind, and a mounted volume containing a readonly dataset. 
+docker run -it --rm --gpus all -v $(pwd):/src -v /{path}/{to}/{data}:/data:ro sg2:1.0 bash
 
 # To smoke test the setup (from inside the stylegan2 dir [the container work dir])
 nvcc test_nvcc.cu -o test_nvcc -run
