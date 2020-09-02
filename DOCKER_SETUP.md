@@ -51,7 +51,7 @@ sudo usermod -aG docker bakerdp
 <hr>
 
 ## 4. CLONE THE CONTAINER IMAGE INPUTS
-    git clone https://github.com/NVlabs/stylegan2.git . 
+    git clone https://github.com/derek-baker/stylegan2.git . 
 
 <hr>
 
