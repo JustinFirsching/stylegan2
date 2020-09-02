@@ -42,7 +42,7 @@ ssh -p 2222 <USER_NAME>@<REMOTE_HOST>
 <br>
 
 ### 5. WHY?
-- Our intent is to expose a READ/WRITE volume to a docker container containing our code.
+- Our intent is to expose a READ/WRITE volume containing our code to a docker container.
 - That will allow us edit code, and have those changes instantly visible in said container.
 - Since our ```docker run <ET CETERA>``` command will get us an interactive BASH session in the running container: 
     - That means we can easily ```ALT+TAB``` between VS-Code (which should be editing the files on the remote host) and a terminal-based SSH session (which is running inside a container on the remote host but has visibility to the files we're editing on the remote host) for the purpose of running the code we're editing.
