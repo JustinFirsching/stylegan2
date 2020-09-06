@@ -26,7 +26,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
-<hr>
+<hr><br>
 
 ## 2. INSTALL DOCKER NVIDIA CONTAINER RUNTIME
 DOCS: https://docs.docker.com/config/containers/resource_constraints/#gpu 
@@ -40,7 +40,7 @@ curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidi
 systemctl restart docker
 ```
 
-<hr>
+<hr><br>
 
 ## 3. ADD USER TO docker GROUP (The remaining users should be added)
 (user may need to log out and back in for change to take effect)
@@ -48,12 +48,12 @@ systemctl restart docker
 sudo usermod -aG docker bakerdp   
 ```
 
-<hr>
+<hr><br>
 
 ## 4. CLONE THE CONTAINER IMAGE INPUTS
     git clone https://github.com/derek-baker/stylegan2.git . 
 
-<hr>
+<hr><br>
 
 ## 5. BUILD THE CONTAINER IMAGE 
 (This should pull several of the layers from local cache rather than downloading)
@@ -62,13 +62,7 @@ cd <DIR_CONTAINING_CLONED_REPO>
 docker build --tag sg2:1.0 .
 ```
 
-<hr>
-
-<!-- ## 6. CREATE A VOLUME IN YOUR 
-(Assumes you have a work dir of <DIR_CONTAINING_CLONED_REPO>)
-``` bash
-docker volume create name <YOUR_USERNAME>
-``` -->
+<hr><br>
 
 ## 6. RUN THE CONTAINER INTERACTIVELY 
 DOCS: https://docs.docker.com/engine/reference/commandline/run/
@@ -78,6 +72,7 @@ DOCS: https://docs.docker.com/engine/reference/commandline/run/
 # Run the container with a volume mounted with a two-way bind, 
 # so that edited code is immediately reflected in the container. 
 docker run -it --rm --gpus all -v $(pwd):/src sg2:1.0 bash
+
 
 # To smoke test the setup (from inside the stylegan2 dir [the container work dir])
 nvcc test_nvcc.cu -o test_nvcc -run
